@@ -17,8 +17,22 @@ class TournametsView extends StatelessWidget
         backgroundColor: Theme.of(context).colorScheme.inversePrimary,        
         title: const Text("Tournaments"),  
       ),
-      body: const Center(
-        child: Center(child: Text("Tournaments "),),   
+      body: Container(
+        padding: const EdgeInsets.all(10),
+        child: Column(
+          children: [
+            Container(
+              height: 40,
+              decoration: const BoxDecoration(color: Colors.red),
+            ),
+            Expanded(
+              child: ListView.builder(
+                itemCount: controller.tournaments.length,
+                itemBuilder: (context, index) {
+                return ListTile(title: Text(controller.tournaments.elementAt(index).name));
+              }))            
+          ],
+        ),   
       ),
       floatingActionButton: FloatingActionButton(        
         onPressed: controller.onAddTournamentClicked,

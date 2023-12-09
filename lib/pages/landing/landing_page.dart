@@ -87,7 +87,7 @@ class LandingPage extends StatelessWidget {
   Widget build(BuildContext context) 
   {
 
-    final controller = Get.put(LandingController(), permanent: false);
+    final controller = Get.put(LandingController());
 
     return SafeArea(child: 
                       Scaffold(
